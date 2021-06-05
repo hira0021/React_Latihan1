@@ -6,27 +6,32 @@ const employeeInfo = [
   {
     firstName: "Jek",
     lastName: "Smith",
-    age: "21"
+    age: "21",
+    employeeId: "1"
   },
   {
     firstName: "Arip",
     lastName: "Gege",
-    age: "21"
+    age: "21",
+    employeeId: "2"
   },
   {
     firstName: "Dewa",
     lastName: "Bumi",
-    age: "21"
+    age: "21",
+    employeeId: "3"
   },
   {
     firstName: "Sakti",
     lastName: "Mandraguna",
-    age: "21"
+    age: "21",
+    employeeId: "4"
   },
   {
     firstName: "Uzumaki",
     lastName: "Genjih",
-    age: "59"
+    age: "59",
+    employeeId: "5"
   }
 ]
 
@@ -37,7 +42,7 @@ function App() {
         <h1> Company Directory </h1>
         {employeeInfo.map(employee => {
           return (
-            <Employee {...employee} />
+            <Employee key={employee.employeeId} {...employee} />
           );
         })}        
       </header>
