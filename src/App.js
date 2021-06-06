@@ -53,15 +53,24 @@ const employeeData = {
 };
 
 function App() {
-  const {name, salary: employeeSalary, address} = employeeData;
-  const {salary: salaryAddress,street, country, province, zone} = address;
+  // Destructuring dalam 1 baris
+  const {
+    name, 
+    salary, 
+    address: {
+      street, 
+      country, 
+      province, 
+      zone : {plantZone: myPlantZone, alienZone}
+    }
+  } = employeeData;
+
   return (
     <div className="App">
       <header className="App-header">
         <h1> Company Directory </h1>
-        <p>{name} {employeeSalary}</p>
-        <p>{`Gajih : ${employeeSalary}`}</p>
-        <p>{`Gajih Address : ${salaryAddress}`}</p>
+        <p>{name}</p>
+        <p>{myPlantZone}</p>
       </header>
     </div>
   );
