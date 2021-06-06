@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Employee from './Employee';
 
@@ -35,16 +35,33 @@ const employeeInfo = [
   }
 ]
 
+const employeeData = {
+  id: "1",
+  name: "Tofik",
+  salary: "$5000",
+  address: {
+    salary: "$100",
+    street: "JL. Nanas",
+    country: "Indonesia",
+    province: "Banten",
+    zone: {
+      plantZone: "7B",
+      alienZone: "41"
+    }
+  }
+
+};
+
 function App() {
+  const {name, salary: employeeSalary, address} = employeeData;
+  const {salary: salaryAddress,street, country, province, zone} = address;
   return (
     <div className="App">
       <header className="App-header">
         <h1> Company Directory </h1>
-        {employeeInfo.map(employee => {
-          return (
-            <Employee key={employee.employeeId} {...employee} />
-          );
-        })}        
+        <p>{name} {employeeSalary}</p>
+        <p>{`Gajih : ${employeeSalary}`}</p>
+        <p>{`Gajih Address : ${salaryAddress}`}</p>
       </header>
     </div>
   );
