@@ -11,13 +11,15 @@ function App() {
       <header className="App-header">
 
       <h1>Welcome to the app!</h1>
+      
       <button onClick={() => setIsLogin(!isLogin)}>
-      {isLogin? (
-        "Logout"
-      ) : (
-        "Login"
-      )}
-    </button>
+        {isLogin? (
+          "Logout"
+        ) : (
+          "Login"
+        )}
+      </button>
+      
       {
         isLogin ? (
         <h3>Hello Hira-san</h3>
