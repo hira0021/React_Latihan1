@@ -1,32 +1,31 @@
 import React, { useState } from 'react';
 import './App.css';
-import Employee from './Employee';
 
 function App() {
 
-  const employee = [
-    {
-      name: "Hira",
-      id: "001"
-    },
-    {
-      name: "Rean",
-      id: "002"
-    }
-  ]
 
-  const baseEmployeeObjet = {
-    role: "Employee",
-    company: "Hira Code"
-  }
+  const employees = ["Hira", "Rean"];
 
-  const firstEmployee = {...baseEmployeeObjet , ...employee[0]};
+  // conditional rendering juga dapat digunakan dalam variable
+  // jadi dapat cek variabel dalam kasus employees undefined
+  const firstEmployees = employees && employees[0];
 
   return (
     <div className="App">
       <header className="App-header">
 
-      <Employee {...firstEmployee}/>
+      
+      {// penggunaan variabel (employees) didepan dalam kondisi akan mengembalikan true *dipakai untuk menghilangkan error meskipun variabel (employees) tidak ada isinya/undefined
+        // juga bisa menambahkan kondisi lain dengan menggunakan () contoh = employees && (employees.length > 0 || *kondisi lain*) && (jsx/hasil)
+        employees && employees.length > 0  && (
+          <div>
+          <h2>Employee List :</h2>
+          {employees.map(employees => (
+            <h4>{employees}</h4>
+          ))}
+          </div>
+      )}
+      
 
 
 
