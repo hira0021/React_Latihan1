@@ -1,18 +1,37 @@
 import React, { useState } from 'react';
 import './App.css';
+import Employee from './Employee';
 
 function App() {
 
-  const arr1 = [1, 2, 3];
-  const arr2 = [4, 5, 6];
+  const employee = [
+    {
+      name: "Hira",
+      id: "001"
+    },
+    {
+      name: "Rean",
+      id: "002"
+    }
+  ]
 
-  const arr3 = [...arr1, ...arr2];
+  const baseEmployeeObjet = {
+    role: "Employee",
+    company: "Hira Code"
+  }
 
-  console.log(arr3);
+  const firstEmployee = {...baseEmployeeObjet , ...employee[0]};
 
   return (
     <div className="App">
       <header className="App-header">
+
+      <Employee {...firstEmployee}/>
+
+
+
+
+
 
       </header>
     </div>
