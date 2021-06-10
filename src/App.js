@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import TestCounter from './TestCounter'
 import './App.css';
+import TodoList from './TodoList';
 
 function App() {
 
@@ -8,11 +8,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Selamat Datang di aplikasi penghitung!</h1>
+      <h1>Selamat Datang di aplikasi!</h1>
       <button onClick={() => setShowCounter(!showCounter)}>
         {showCounter? "Sembunyikan" : "Tampilkan"}
       </button>
-      {showCounter && <TestCounter />}
+      {showCounter && <TodoList />}
 
 
 
